@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Templatelist;
+use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Controllers\Controller;
+use Validator;
+
 
 class TemplatelistController extends Controller
 {
@@ -53,23 +57,23 @@ class TemplatelistController extends Controller
 
     }
 
-    function action(Request $request)
+    function addtemplt(Request $request)
     {
-
-      dd('test');
-
      $validation = Validator::make($request->all(), [
-      'select_file' => 'required|image|mimes:psd'
+      'file' => 'required'
      ]);
+     
      if($validation->passes())
      {
+
       $image = $request->file('file');
       $new_name = rand() . '.' . $image->getClientOriginalExtension();
       $image->move(public_path('images'), $new_name);
-      return;
+      return $new_name;
      }
      else
      {
+      
       return response()->json([
        'message'   => $validation->errors()->all(),
        'uploaded_image' => '',

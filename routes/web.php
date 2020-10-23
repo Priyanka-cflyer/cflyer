@@ -29,5 +29,5 @@ Route::get('delete/{id}','TemplatelistController@destroy');
 
 Route::get('/templateAdd','TemplatelistController@addtemplate')->name('templateAdd');
 
-Route::post('/ajax_upload/action', 'TemplatelistController@action')->name('psdaction');
 
+Route::post('store-file', 'TemplatelistController@addtemplt');

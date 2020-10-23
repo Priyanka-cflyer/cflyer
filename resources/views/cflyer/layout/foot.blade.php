@@ -55,6 +55,8 @@
 <script type="text/javascript" src="{{'https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js'}}"></script>
 <script type="text/javascript" src="{{'https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js'}}"></script>
 
+<script src="{{asset('assets/js/psd.min.js')}}"></script>
+
 
 
 <script src="{{asset('assets/theme_css_js/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js')}}"></script>
