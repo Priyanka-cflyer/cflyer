@@ -27,6 +27,9 @@
 <script src="{{asset('assets/js/validation.js')}}"></script>
 <script src="{{asset('assets/js/custome.js')}}"></script>
 
+<script src="{{asset('assets/js/psd.js')}}"></script>
+
+
 <script src="{{asset('assets/js/magiczoomplus.js')}}"></script>
 <script src="{{asset('assets/js/pdfmaker.js')}}"></script>
 <script src="{{asset('assets/theme_css_js/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
@@ -55,7 +58,6 @@
 <script type="text/javascript" src="{{'https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js'}}"></script>
 <script type="text/javascript" src="{{'https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js'}}"></script>
 
-<script src="{{asset('assets/js/psd.min.js')}}"></script>
 
 
 

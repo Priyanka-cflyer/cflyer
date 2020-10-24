@@ -31,7 +31,7 @@ var formData = new FormData(this);
    });
 
 
-
+ dataa = [];
 $("#file").on('change',function(){
 
    $('.tti').css('display', 'block');
@@ -78,14 +78,48 @@ $("#file").on('change',function(){
                 }).done(function(data){
 
             $(".inization").append('Initializing<marquee scrollamount="1" direction="right" WIDTH="10%" style="margin: 0px 0 -5px 0;">..........</marquee>.');
-            var newimage='public/images/'+data;  
-               alert(newimage)
-               var PSD = require('psd');
+            // var newimage='images/'+'Flyer-Modfied-d62-18-11-16-Front-Keyur.psd';  
+            var newimage='images/'+data;
+               //alert(newimage)
+              // var PSD = require('psd');
+
+              var PSD = require('psd');
+              PSD.fromURL(newimage).then(function(psd) {
+                  
+                  $(".divhide").css('display', 'block');
+
+                        $(".inization").html("");
+
+                        
+
+                        try{
+
+                           dataa=psd.tree().export();
+                        }
+                        catch(err) {
+                           $(".errormessage" ).html(" ");
+
+                           $(".divhide").css('display', 'none');
+                           $(".errormessage" ).append('<div style="color:red;"><label style="padding: 0px 0 0 5px;">- This Psd. File is corrupted or has wrong layer format. Please correct the issue and try again.</label></div>');
+
+                           $('.tti').css('display', 'none');
+                           $('.progress-bar').css('display', 'none');
+                           $('.status').css('display', 'none');
+                           $('#file').empty();
+
+                           document.getElementById('rest').reset();
+                           //return false;
+                           errorcount++;
 
 
-                  PSD.fromURL(newimage).then(function(psd) {
-                     console.log(psd);
-                  })
+                        }
+
+                       console.log(dataa); 
+
+
+              });
+              
+
 
       });
   
