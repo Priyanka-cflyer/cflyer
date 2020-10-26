@@ -39,6 +39,9 @@
 <link href="{{'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700'}}" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{{'https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css'}}">
 <link rel="stylesheet" type="text/css" href="{{'https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css'}}">
+
+<link rel="stylesheet" type="text/css" href="{{'https://cflyer.com/lead/css/template/custom.css'}}">
+
 <script src="{{asset('assets/theme_css_js/plugins/jquery/jquery.min.js')}}"></script>
 
 </head>
