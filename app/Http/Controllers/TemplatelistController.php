@@ -7,10 +7,16 @@ use App\Templatelist;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Http\Controllers\Controller;
 use Validator;
+use Imagick;
+
 
 
 class TemplatelistController extends Controller
 {
+
+    // public function __construct(){
+    //     $this->imagic = new Imagick();
+    // }
 
 	    //
     function index()
@@ -29,6 +35,21 @@ class TemplatelistController extends Controller
     function addtemplate()
     {
     	return view('cflyer.add_template');
+    }
+
+
+    function imageresoltion(Request $request)
+    {
+
+
+       $imageresize='public/'.$_POST["path"];
+      $image = new Imagick($imageresize);
+    dd($image);
+
+     // $image=new Imagick($imageresize);
+      $array=$image->getImageResolution();
+      print_r($array['x']);
+
     }
 
         /**
