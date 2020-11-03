@@ -41,14 +41,14 @@ class TemplatelistController extends Controller
     function imageresoltion(Request $request)
     {
 
+      $url=$_POST["path"];
 
-       $imageresize='public/'.$_POST["path"];
-      $image = new Imagick($imageresize);
-    dd($image);
+$image = new Imagick($_SERVER['DOCUMENT_ROOT'] . '/laraDemo/public/images/'.$url);
 
-     // $image=new Imagick($imageresize);
-      $array=$image->getImageResolution();
-      print_r($array['x']);
+   // $image=new Imagick('http://localhost/laraDemo/public/images/avatar.png');
+    $array=$image->getImageResolution();
+    print_r($array['x']);
+
 
     }
 

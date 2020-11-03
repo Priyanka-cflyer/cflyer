@@ -2661,8 +2661,8 @@ if(contact_array !='')
  var hideshow=1;
 
  function loadmoreTemplate(imge_name,sum,data){
-
-  var path ='images/'+data;  
+//s
+  var path =data;  
   var tmp=0;
   $.ajax({  
     url:"imgeresoltion",  
