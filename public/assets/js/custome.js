@@ -12,15 +12,17 @@
   var  DuplicatBlock=[];
 
 
+
+
+   // $('.next_to_show').hide();
+   // $(".loader").css("display", "block");
+   //$("#uploadForm").on('submit',(function(e){
 $.ajaxSetup({
 headers: {
 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 }
 });
 
-   // $('.next_to_show').hide();
-   // $(".loader").css("display", "block");
-   //$("#uploadForm").on('submit',(function(e){
 
     $(document).on('change', '#file', function(){
          // this.reset();
@@ -104,13 +106,13 @@ headers: {
                     mimeType:"multipart/form-data"
                 }).done(function(data){
 
-                  //alert(data)
+
                   if(data!='else')
                   {
                     $(".inization").append('Initializing<marquee scrollamount="1" direction="right" WIDTH="5%" style="margin: 0px 0 -5px 0;">..........</marquee>.');
-                    var newimage='images/'+data;  
-                    var pre='images/'+data;
-                    var url='images/'+data;
+                    var newimage='upload/template_psd/'+data;  
+                    var pre='<?php echo base_url()?>upload/template_psd/'+data;
+                    var url='<?php echo base_url() ?>'+data;
                     $('#front_side_imagee').val(url);
 
                     var PSD = require('psd');
@@ -946,7 +948,7 @@ headers: {
                     //.replace(/\s+/g, '');
                     var fg = t.replace(/\s+/g, '');
 
-                    var avoid = "*"
+                    var avoid = "*";
 
                     var test=fg.replace(avoid, '');
                     var size=dataa['children'][k]['children'][i]['text'];
@@ -1813,22 +1815,21 @@ var itemcount=nbOcc;
 
           var path =newimage; 
 
-          // $.ajax({  
-          //   url:"<?php echo base_url() ?>index.php/admin/template/delete_psd_file",  
-          //   type:"POST",  
-          //   data:{path:path},  
-          //   success:function(res){  
-          //     //console.log('psd file delete'); 
-          //   }  
-          // });    
-
+          $.ajax({  
+            url:"<?php echo base_url() ?>index.php/admin/template/delete_psd_file",  
+            type:"POST",  
+            data:{path:path},  
+            success:function(res){  
+              //console.log('psd file delete'); 
+            }  
+          });             
           $(".errormessage" ).append('<div style="color:red;"><label style="padding: 0px 0 0 5px;">- This psd. file is corrupted or has wrong layer format. please correct the issue and try again.</label></div>');
 
           $('.tti').css('display', 'none');
           $('.progress-bar').css('display', 'none');
           $('.status').css('display', 'none');
           $('.divhide').css('display', 'none');       
-          //document.getElementById('rest').reset();
+          document.getElementById('rest').reset();
 
           //return false;
           errorcount++;
@@ -1840,21 +1841,20 @@ var itemcount=nbOcc;
 //alert(contact);
         if(description_array_group!='')
         {
-           // alert(description_array_group)
-            //console.log(description_array_group);
-//var descduplicatt=find_duplicate_in_array(description_array_group);
+
+var descduplicatt=find_duplicate_in_array(description_array_group);
         //console.log(compduplicatt);
-    //    var ellsyerDescr = $.map(descduplicatt, function(val, i) {
-      //    return val;
-        //});
+        var ellsyerDescr = $.map(descduplicatt, function(val, i) {
+          return val;
+        });
 
-        // var vf=ellsyerDescr;
-        // //alert(vf)
-        // if(vf !='0')
-        // {
+        var vf=ellsyerDescr;
+        //alert(vf)
+        if(vf !='0')
+        {
 
-        // DuplicatBlock.push(vf);
-        // }
+        DuplicatBlock.push(vf);
+        }
 
         }
 
@@ -2089,7 +2089,7 @@ if(contact_array !='')
 
 
         $('#image_preview1').css('display','block');
-        $('#templatemodal').modal('show');
+        $('#Uploadatemplate').modal('show');
         $('.tti').css('display', 'none');
 
         $('.tti').css('display', 'none');
@@ -2123,7 +2123,7 @@ if(contact_array !='')
 
       } 
       $('#image_preview1').css('display','block');
-              $('#templatemodal').modal('show');
+              $('#Uploadatemplate').modal('show');
               $('.tti').css('display', 'none');
 
               $('.tti').css('display', 'none');
@@ -2494,19 +2494,19 @@ if(contact_array !='')
               if(blk=='')
               {
 
-                $('#colorPicker1').jPicker();
-                $('#colorPicker2').jPicker();
-                $('#colorPicker3').jPicker();
-                $('#colorPicker4').jPicker();
-                $('#colorPicker5').jPicker();
-                $('#colorPicker6').jPicker();
+                // $('#colorPicker1').jPicker();
+                // $('#colorPicker2').jPicker();
+                // $('#colorPicker3').jPicker();
+                // $('#colorPicker4').jPicker();
+                // $('#colorPicker5').jPicker();
+                // $('#colorPicker6').jPicker();
 
-                $('#colorPicker500').jPicker();
-                $('#colorPicker501').jPicker();
-                $('#colorPicker502').jPicker();
-                $('#colorPicker503').jPicker();
-                $('#colorPicker504').jPicker();
-                $('#colorPicker505').jPicker();
+                // $('#colorPicker500').jPicker();
+                // $('#colorPicker501').jPicker();
+                // $('#colorPicker502').jPicker();
+                // $('#colorPicker503').jPicker();
+                // $('#colorPicker504').jPicker();
+                // $('#colorPicker505').jPicker();
               }
 
 
@@ -2522,9 +2522,9 @@ if(contact_array !='')
               var colorcode=data;
 
               var s='color='+ colorcode ;
-
+              alert(colorcode)
               $.ajax({
-                url: "<?php echo base_url() ?>index.php/admin/color_detection",
+                url: "color_detection",
                 type: "POST", 
                 data:s,
                 cache: false, 
@@ -2555,7 +2555,7 @@ if(contact_array !='')
               error: function(xhr, desc, err) {
                 $(".loader").css("display", "none");
 
-                $('#templatemodal').modal('hide');
+                $('#Uploadatemplate').modal('hide');
                 $( "#Folding" ).keyup(); 
                 $('#image_preview1').css('display','block');
 
@@ -2614,25 +2614,40 @@ if(contact_array !='')
 
 
 
-      }
-      else
-      {
+}
+else
+{
+  $('#image_preview1').css('display','block');
+  $('#Uploadatemplate').modal('hide');
+  $( "#Folding" ).keyup(); 
+                // swal({"Error","Unsupported File!", "error",showConfirmButton: true});
+              //  swal({type: 'error',title: 'Unsupported File!',showConfirmButton: true});
+              $(".errormessage" ).html(" ");
+
+              $(".errormessage" ).append('<div style="color:red"><label style="padding: 0px 0 0 5px;">- Unsupported file!.</label></div>');
+
+
+
+          } 
+
+
+
+      }).error(function (e) {
+
+
         $('#image_preview1').css('display','block');
-        $('#templatemodal').modal('hide');
-        $( "#Folding" ).keyup(); 
-                      // swal({"Error","Unsupported File!", "error",showConfirmButton: true});
-                    //  swal({type: 'error',title: 'Unsupported File!',showConfirmButton: true});
-                    $(".errormessage" ).html(" ");
+        $('#Uploadatemplate').modal('show');
+        $('.tti').css('display', 'none');
+  //$( "#Folding" ).keyup(); 
+                // swal({"Error","Unsupported File!", "error",showConfirmButton: true});
+              //  swal({type: 'error',title: 'Unsupported File!',showConfirmButton: true});
+              $(".errormessage" ).html(" ");
 
-                    $(".errormessage" ).append('<div style="color:red"><label style="padding: 0px 0 0 5px;">- Unsupported file!.</label></div>');
-
-
-
-                } 
+              $(".errormessage" ).append('<div style="color:red"><label style="padding: 0px 0 0 5px;">- Internal server error.</label></div>');
 
 
 
-      });
+          });
 
 
   }
@@ -2661,11 +2676,12 @@ if(contact_array !='')
  var hideshow=1;
 
  function loadmoreTemplate(imge_name,sum,data){
-//s
+
   var path =data;  
   var tmp=0;
   $.ajax({  
-    url:"imgeresoltion",  
+    
+    url:"imgeresoltion",
     type:"POST",  
     data:{path:path},  
     success:function(ress){  
@@ -2710,19 +2726,19 @@ if(contact_array !='')
 
    var path =reso; 
 
-   // $.ajax({  
-   //  url:"<?php echo base_url() ?>index.php/admin/template/imgeresoltion",  
-   //  type:"POST",  
-   //  data:{path:path},  
-   //  success:function(ressd){  
-   //               // alert(ress)
+   $.ajax({  
+    url:"<?php echo base_url() ?>index.php/admin/template/imgeresoltion",  
+    type:"POST",  
+    data:{path:path},  
+    success:function(ressd){  
+                 // alert(ress)
                  
-   //           }  
-   //       });
+             }  
+         });
 
 
 
-   // jQuery('script[src="<?php echo base_url() ?>asstes/js/test.js"]').remove();
+   jQuery('script[src="<?php echo base_url() ?>asstes/js/test.js"]').remove();
 
    var img_name_store=layoutt;
    var kj=0;
@@ -3042,10 +3058,10 @@ function loadmoreTemplate_next(imge_name,sum,data){
   $( "#append_TG_common_nextt" ).html("");
   bufsizee =10;
 
-  var path ='images/'+data;  
+  var path ='upload/template_psd/'+data;  
   var tmp=0;
   $.ajax({  
-    url:"imgeresoltion",  
+    url:"<?php echo base_url() ?>index.php/admin/template/imgeresoltion",  
     type:"POST",  
     data:{path:path},  
     success:function(ress){  

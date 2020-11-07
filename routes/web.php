@@ -33,3 +33,5 @@ Route::get('/templateAdd','TemplatelistController@addtemplate')->name('templateA
 Route::post('store-file', 'TemplatelistController@addtemplt');
 
 Route::post('imgeresoltion','TemplatelistController@imageresoltion');
+Route::post('color_detection','TemplatelistController@color_detection');
+

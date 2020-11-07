@@ -21,25 +21,19 @@
 	#paint-app{position:absolute;margin-top:-22%;}
 
 </style>
-<div class="content-wrapper">
+<div class="container-fluid">
 
-	<section class="content">
-    <div class="container-fluid">
-      <!-- Small boxes (Stat box) -->
-      <div class="col-sm-12">
-					<div class="sectionmain" id="sectionmain_id">
-
+									<div class="sectionmain" id="sectionmain_id">
 										<div class="Uploadbtn">
-
 											<!-- <a href="<?php //echo base_url().'index.php/admin/template'; ?>" id="button1" class="Uploadbtn_a">Back</a> -->
 
-											<!-- <a  id="template_reload" class="Uploadbtn_a" data-toggle="modal" data-target="#Uploadatemplate">Upload Template</a>  -->
+											<!-- <a  id="template_reload" class="Uploadbtn_a" data-toggle="modal" data-target="#Uploadatemplate">Upload Temsdfplate</a>  -->
 
 
 											<div id="" class="images_p"><br>
 												<div id="frontimagestore">
 
-													<a id="Zoom-1"  class="MagicZoom zoomdata"  data-options="zoomCaption: top; zoomHeight:400px; zoomWidth: 500px; zoomDistance: 30; expand: fullscreen; expandZoomOn: always;" style="width:  100px;>
+													<a id="Zoom-1"  class="MagicZoom zoomdata"  data-options="zoomCaption: top; zoomHeight:400px; zoomWidth: 500px; zoomDistance: 30; expand: fullscreen; expandZoomOn: always;" style="width:  100px;">
 													<img class="img_temp" id="image_preview1"  src="" alt=""/>
 												</a>
 											</div><br>
@@ -57,17 +51,12 @@
 									<div class="TG_common divhide" >
 										<div class="TG_common_data">
 											<h4 class="foldable_title"  data-class="GeneralInfo">General Info <i class="fa fa-angle-up" aria-hidden="true"></i></h4>
-
-											<input type="text" name="orignalwidth" id="orignalwidth" hidden>
-
-											<input type="text" name="orignalheigth" id="orignalheigth" hidden>
-
 											<div id="GeneralInfo" class="TG_common_datalist">
 												<ul class="TG_common_datalist_ul list-inline list-unstyled">
 													<li>
 														<div class="alldropdwon">
 															<span>Print Product:<span style="color: red;font-size: 23px;position: absolute;top: -8px;">* </span></span>
-														
+															
 															<i class="fa fa-caret-down" aria-hidden="true"></i>                      
 														</div>
 													</li> 
@@ -102,7 +91,6 @@
 														<div class="alldropdwon">
 															<span>Designer:<span style="color: red;font-size: 23px;position: absolute;top: -8px;">* </span></span>               
 
-															<?php //echo form_dropdown('Designer',$designer,'','class="form-control " id="Designer"  '); ?>
 															<i class="fa fa-caret-down" aria-hidden="true"></i>
 															<input type="text" name="length" id="length" value="" hidden="hidden">
 															<input type="text" name="psdfile" id="psdfile" value="" hidden="hidden">
@@ -149,8 +137,7 @@
 															<span>Print Shape:<span style="color: red;font-size: 23px;position: absolute;top: -8px;">* </span></span>
 
 
-															<?php //echo form_dropdown('Print_Shape[]', $print_shape,'','class="form-control selectpicker" title="Select Print Shape" id="Print_Shape" multiple required'); ?>
-
+															
 
 															<i class="fa fa-caret-down" aria-hidden="true"></i>
 														</div>
@@ -172,8 +159,7 @@
 														<div class="alldropdwon">
 															<span>Folding: <span style="color: red;font-size: 23px;position: absolute;top: -8px;">* </span></span>
 
-															<!-- <?php //echo form_dropdown('Folding[]', $folding,'','class="form-control selectpicker" title="Select Folding" id="Folding" multiple required'); ?> -->
-
+															
 															<i class="fa fa-caret-down" aria-hidden="true"></i>
 														</div>
 													</li> 
@@ -203,15 +189,14 @@
 													<li>   
 														<div class="alldropdwon">
 															<span>Purpose:<span style="color: red;font-size: 23px;position: absolute;top: -8px;">* </span></span>
-															<?php //echo form_dropdown('purpose', $purpose,'','class="form-control" id="purpose" '); ?>
-
+															
 															<i class="fa fa-caret-down" aria-hidden="true"></i>
 														</div>
 													</li>
 													<li>
 														<div class="alldropdwon">
 															<span>Occasion / Event:<span style="color: red;font-size: 23px;position: absolute;top: -8px;">* </span> </span>
-															<?php //echo form_dropdown('Event', $event,'','class="form-control" id="event" onchange="othereventt()"'); ?>
+															
 															<i class="fa fa-caret-down" aria-hidden="true"></i>
 														</div>
 													</li>
@@ -286,7 +271,7 @@
 
 														<h4 class="foldable_title" data-class="contentt">Layout Structure<i class="fa fa-angle-up" aria-hidden="true"></i></h4>
 														<div id="contentt" class="TG_common_datalist">  
-															<ul class="`_ul list-inline list-unstyled">
+															<ul class="TG_common_datalist_ul list-inline list-unstyled">
 																<li>
 																	<div class="alldropdwon">
 																		<span>Tag</span><br>
@@ -345,7 +330,7 @@
 													<div class="TG_common_data">
 
 														<h4 class="foldable_title" data-class="content">Design Blocks/ Groups<i class="fa fa-angle-up" aria-hidden="true"></i></h4>
-										<div id="content" class="TG_common_datalist">  
+														<div id="content" class="TG_common_datalist">  
 
 															<p style="text-align: center;" id="hiddenshowid">Upload file first</p>
 															<div id="append_TG_common" class="append_class_frnt" when-scrolled="loadMore()" style="display:none;">
@@ -363,13 +348,199 @@
 										</div>
 									</div>
 
-				</div>	
-		</div>
-	</div>
-</section>
+									<div class="next_to_show" style="display:none"> 
+										<div class="sectionmain" id="">
+											<div class="Uploadbtn">
+												<a  id="template_reloadd" href="#" class="Uploadbtn_a" data-toggle="modal" data-target="#Uploadatemplate_next">Upload a Template</a> 
+												<div id="" class="images_p" width="100" height="100" >
+													<br>
+													<!-- <img id="image_preview11" src="" width="100" hidden="hidden"> -->
+													<div id="frontimagestore_back">
+
+
+														<a id="Zoom-11"  class="MagicZoom"  data-options="zoomCaption: top; zoomHeight:400px; zoomWidth: 500px; zoomDistance: 30; expand: fullscreen; expandZoomOn: always;" style="width:  100px; height: 57px;" >
+															<img class="img_temp" id="image_preview11"  src="" alt=""/>
+														</a>
+
+													</div>
+													<input type="text" name="image_preview11_back" id="imge_back" hidden>
+
+
+												</div>
+											</div>
+
+											<div class="TG_common backdivside">
+												<div class="TG_common_data">
+													<h4 class="foldable_title"  data-class="General_design_prefrenc">Design Preferences <i class="fa fa-angle-up" aria-hidden="true"></i></h4>
+													<div id="General_design_prefrenc" class="TG_common_datalist">
+														<div class="TG_common_datalist">
+															<ul class="TG_common_datalist_ul list-inline list-unstyled">  
+																<li>
+																	<div class="alldropdwon">
+																		<span>Purpose:<span style="color: red;font-size: 30px;position: absolute;top: -8px;">* </span></span>
+																		
+																		<i class="fa fa-caret-down" aria-hidden="true"></i>
+																	</div>
+																</li>
+
+																<li>
+																	<div class="alldropdwon">
+																		<span>Target Age:<span style="color: red;font-size: 30px;position: absolute;top: -8px;">* </span></span>
+                         
+
+                         	<input type="text" name="age_next" id="quantity" />&nbsp;<span id="errmsg"></span>
+
+
+                         </div>
+                     </li>
+                     <li>
+                     	<div class="alldropdwon">
+                     		<span>Target Gender:<span style="color: red;font-size: 30px;position: absolute;top: -8px;">* </span></span>
+                     		<select name="gender_next" id="gender_next" class="form-control" >
+                     			<option value="">Select Gender</option>
+                     			<option value="male">Male</option>
+                     			<option value="Female">Female</option>
+                     			<option value="Both_Genders">Both Genders</option>
+                     		</select>
+                     		<i class="fa fa-caret-down" aria-hidden="true"></i>
+                     	</div>
+                     </li>
+                     <li>
+                     	<div class="alldropdwon">
+                     		<span>Occasion / Event:<span style="color: red;font-size: 30px;position: absolute;top: -8px;">* </span> </span>
+                     		
+                     		<i class="fa fa-caret-down" aria-hidden="true"></i>
+                     	</div>
+                     </li> 
+                     <li>
+                     	<div class="alldropdwon">
+                     		<span>Color1:<span style="color: red;font-size: 30px;position: absolute;top: -8px;">* </span></span>
+                     		<input type="text" name="main_color" value="141313" id="colorPicker500" class='color_picker'/>
+
+                     	</div>
+                     </li> 
+                     <li>
+                     	<div class="alldropdwon">
+                     		<span>Color2:<span style="color: red;font-size: 30px;position: absolute;top: -8px;">* </span></span>
+                     		<input type="text" name="sub_color" id="colorPicker501" class='color_picker'/>
+
+                     	</div>
+                     </li>
+                     <li>
+                     	<div class="alldropdwon">
+                     		<span>Color3:<span style="color: red;font-size: 30px;position: absolute;top: -8px;">* </span></span>
+                     		<input type="text" name="main_color1" id="colorPicker502" class='color_picker'/>
+
+                     	</div>
+                     </li> 
+                     <li>
+                     	<div class="alldropdwon">
+                     		<span>Color4:<span style="color: red;font-size: 30px;position: absolute;top: -8px;">* </span></span>
+                     		<input type="text" name="sub_color1" id="colorPicker503" class='color_picker'/>
+
+                     	</div>
+                     </li>
+                     <li>
+                     	<div class="alldropdwon">
+                     		<span>Color5:<span style="color: red;font-size: 30px;position: absolute;top: -8px;">* </span></span>
+                     		<input type="text" name="main_color2" id="colorPicker504" class='color_picker'/>
+
+                     	</div>
+                     </li> 
+                     <li>
+                     	<div class="alldropdwon">
+                     		<span>Color6:<span style="color: red;font-size: 30px;position: absolute;top: -8px;">* </span></span>
+                     		<input type="text" name="sub_color2" id="colorPicker505" class='color_picker'/>
+
+                     	</div>
+                     </li>  
+
+
+                 </ul>
+
+                 <div class="TG_common subdynamic">
+                 	<div class="TG_common_data">
+
+                 		<h4 class="foldable_title" data-class="contentt">Layout Structure<i class="fa fa-angle-up" aria-hidden="true"></i></h4>
+                 		<div id="contentt" class="TG_common_datalist">  
+                 			<ul class="TG_common_datalist_ul list-inline list-unstyled">
+                 				<li>
+                 					<div class="alldropdwon">
+                 						<span>Tag</span><br>
+                 						<input type="text" name="tagno_back" hidden="hidden">
+                 						<label for="name" id="tagnoo_back"></label>                   
+
+                 					</div>
+                 				</li>  
+                 				<li>
+                 					<div class="alldropdwon">
+                 						<span>Brief Description</span> <br>
+                 						<input type="text" name="Bdesriptionno_back" hidden="hidden">                     
+                 						<label for="name" id="Bdesriptionnoo_back"></label>                   
+
+
+                 					</div>
+                 				</li> 
+                 				<li>
+                 					<div class="alldropdwon">
+                 						<span>Paragraph</span> <br>
+                 						<input type="text" name="paragraphno_back" hidden="hidden">                     
+                 						<label for="name" id="paragraphnoo_back"></label>                   
+
+
+                 					</div>
+                 				</li> 
+                 				<li>
+                 					<div class="alldropdwon">
+                 						<span>Menu</span>  <br>   
+                 						<label for="name" id="menunoo_back"></label>                   
+                 						<input type="text" name="menuno_back" hidden="hidden">                     
+
+
+                 					</div>
+                 				</li> 
+                 				<li>
+                 					<div class="alldropdwon">
+                 						<span>Main Image</span>  <br>
+                 						<label for="name" id="mainimagenoo_back"></label>                   
+                 						<input type="text" name="mainimageno_back" hidden="hidden">                     
+
+
+                 					</div>
+                 				</li> 
+
+
+                 			</ul>
+
+
+                 		</div>
+
+                 	</div>
+                 </div>
+
+
+                 <div class="TG_common subdynamic">
+                 	<div class="TG_common_data">
+
+                 		<h4 class="foldable_title" data-class="contentt">Design Blocks/ Groups<i class="fa fa-angle-up" aria-hidden="true"></i></h4>
+                 		<div id="contentt" class="TG_common_datalist">
+                 			<div id="append_TG_common_nextt" class="append_class_frntt" style="display:none;">
+                 				<!-- <p>Upload file first</p> -->
+                 				<p style="text-align: center;" id="hiddenshowidd">Upload file first</p>
+                 			</div>
+                 		</div>
+
+                 	</div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
 </div>
 
-
+</div>
+</div>
 
 
 
@@ -419,7 +590,10 @@
 				</form>
 			</div>
 			<div class="modal-footer justify-content-between">
+    	
     	<div class="inization" style="text-align: center;color: green;"></div>
+
+
 
 			</div>
 		</div>

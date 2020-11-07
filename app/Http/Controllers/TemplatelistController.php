@@ -38,6 +38,16 @@ class TemplatelistController extends Controller
     }
 
 
+    function color_detection()
+    {
+      $id=$_REQUEST['color'];
+      $n=explode(".",$id);
+      $ss='upload/template_layerimg/'.$n[0]."1".".png";
+
+      echo $ss;
+    }
+
+
     function imageresoltion(Request $request)
     {
 
